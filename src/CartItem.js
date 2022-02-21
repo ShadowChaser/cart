@@ -22,6 +22,7 @@ class CartItem extends React.Component{
         this.setState((prevState) => {
             return {
                 qty: prevState.qty+1
+                
             }
         });
     }
