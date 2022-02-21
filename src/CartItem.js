@@ -2,15 +2,15 @@ import React from 'react';
 
 class CartItem extends React.Component{
     //defining state in the component
-    constructor(){
-        super(); //When we are inheriting from some class first we need to call the constructer of that class
-        this.state={
-            price: 999,
-            title: 'Phone',
-            qty:1,
-            img:''
-        }
-    }
+    // constructor(){
+    //     super(); //When we are inheriting from some class first we need to call the constructer of that class
+    //     this.state={
+    //         price: 999,
+    //         title: 'Phone',
+    //         qty:1,
+    //         img:''
+    //     }
+    // }
 
     increaseQuantity =()=>{ // Arrow function will bind this with this function
         // console.log("this.state",this.state);
@@ -41,7 +41,7 @@ class CartItem extends React.Component{
         });
     }
     render (){
-        const {price,title,qty}=this.state; //getting property from js by objectd de-structuring
+        const {price,title,qty}=this.props.product; //getting property from js by objectd de-structuring
        
         return(
             <div className="cart-item">
