@@ -1,57 +1,19 @@
 import React from 'react';
 
-class CartItem extends React.Component{
-    //defining state in the component
-    // constructor(){
-    //     super(); //When we are inheriting from some class first we need to call the constructer of that class
-    //     this.state={
-    //         price: 999,
-    //         title: 'Phone',
-    //         qty:1,
-    //         img:''
-    //     }
-    // }
-
-    // increaseQuantity =()=>{ // Arrow function will bind this with this function
-    //     // console.log("this.state",this.state);
-    //     //setState form 1
-    //     // this.setState({
-    //     //     qty: this.state.qty+1
-    //     // });
-    //     //setState form 2 - if prev State required use this
-    //     this.setState((prevState) => {
-    //         return {
-    //             qty: prevState.qty+1
-                
-    //         }
-    //     });
-    // }
-
-    // decreaseQuantity =() =>{
-    //     const {qty} =this.state;
-
-    //     if(qty==0){
-    //         return;
-    //     }
-            
-    //     this.setState((prevState) => {
-    //         return {
-    //             qty: prevState.qty-1
-    //         }
-    //     });
-    // }
-    render (){
-        const {price,title,qty}=this.props.product; //getting property from js by objectd de-structuring
+const CartItem=(props)=>{
+    
+    
+        const {price,title,qty}=props.product; //getting property from js by objectd de-structuring
        const {
            product,
            onIncreaseQuantity,
            onDecreaseQuantity,
            onDelete
-       }=this.props;
+       }=props;
         return(
             <div className="cart-item">
                 <div className="left-block">
-                   <img style={styles.image}/>
+                   <img style={styles.image} src={product.img} alt="Imag"/>
                 </div>
                 <div className="right-block">
                     <div style={{fontSize:25}}>{title}</div>
@@ -81,7 +43,6 @@ class CartItem extends React.Component{
                 </div>
             </div>
         );
-    }
 }
 
 const styles = {
